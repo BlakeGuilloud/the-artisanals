@@ -24,8 +24,8 @@ class OpeningContainer extends React.Component {
 
     return (
       <div className="app-opening">
-        <div className="app-opening-logo">
-          <span onClick={this.handleRedirect}>The Artisnals</span>
+        <div onClick={this.handleRedirect} className="app-opening-logo">
+          <span>The Artisanals</span>
         </div>
       </div>
     );

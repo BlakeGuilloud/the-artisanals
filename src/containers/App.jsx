@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { HeaderContainer } from './';
+import { HeaderContainer, FooterContainer } from './';
 
 class App extends React.Component {
   static displayName = 'App';
@@ -18,6 +18,8 @@ class App extends React.Component {
         {location.hash === '#/' ? null : <HeaderContainer />}
 
         {this.props.children}
+
+        {location.hash === '#/' ? null : <FooterContainer />}
       </div>
     );
   }

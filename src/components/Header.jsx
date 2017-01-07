@@ -1,25 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Header extends Component {
-  static displayName = 'Header';
+const Header = (props) => {
+  const {
+    handleRedirect,
+  } = props;
 
-  static propTypes = {}
-
-  state = {};
-
-  render() {
-    return (
-      <div className="app-header">
-        <div className="app-header-logo">
-          The Artisnals
-        </div>
-        <div className="app-header-nav">
-          <span>Home</span>
-          <span>Music</span>
-          <span>Tour</span>
-          <span>About</span>
-        </div>
+  return (
+    <div className="app-header">
+      <div className="app-header-logo">
+        The Artisanals
       </div>
-    );
-  }
+      <div className="app-header-nav">
+        <span onClick={() => handleRedirect('home')}>Home</span>
+        <span onClick={() => handleRedirect('music')}>Music</span>
+        <span onClick={() => handleRedirect('tour')}>Tour</span>
+        <span onClick={() => handleRedirect('about')}>About</span>
+      </div>
+    </div>
+  );
+};
+
+Header.propTypes = {
+  handleRedirect: React.PropTypes.func,
 }
+
+export default Header;

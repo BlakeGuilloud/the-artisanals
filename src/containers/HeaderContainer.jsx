@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { hashHistory } from 'react-router';
 import { Header } from '../components';
 import { headerAnimation } from '../helpers/AnimationHelpers';
 
@@ -11,12 +12,18 @@ class HeaderContainer extends React.Component {
 
   state = {};
 
+  handleRedirect = (path) => {
+    return hashHistory.push(path);
+  }
+
   componentDidMount() {
     headerAnimation();
   }
 
   render() {
-    const props = {};
+    const props = {
+      handleRedirect: this.handleRedirect,
+    };
 
     return (
       <Header {...props} />
@@ -26,9 +33,7 @@ class HeaderContainer extends React.Component {
 
 function mapStateToProps(state) {
   const { example } = state;
-  return {
-    // example: example.examples,
-  };
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {

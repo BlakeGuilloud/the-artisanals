@@ -28990,27 +28990,32 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.OpeningContainer = exports.HomeContainer = exports.HeaderContainer = exports.App = undefined;
+	exports.OpeningContainer = exports.HomeContainer = exports.HeaderContainer = exports.FooterContainer = exports.App = undefined;
 
 	var _App = __webpack_require__(279);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _HeaderContainer = __webpack_require__(280);
+	var _FooterContainer = __webpack_require__(280);
+
+	var _FooterContainer2 = _interopRequireDefault(_FooterContainer);
+
+	var _HeaderContainer = __webpack_require__(281);
 
 	var _HeaderContainer2 = _interopRequireDefault(_HeaderContainer);
 
-	var _HomeContainer = __webpack_require__(286);
+	var _HomeContainer = __webpack_require__(287);
 
 	var _HomeContainer2 = _interopRequireDefault(_HomeContainer);
 
-	var _OpeningContainer = __webpack_require__(287);
+	var _OpeningContainer = __webpack_require__(288);
 
 	var _OpeningContainer2 = _interopRequireDefault(_OpeningContainer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.App = _App2.default;
+	exports.FooterContainer = _FooterContainer2.default;
 	exports.HeaderContainer = _HeaderContainer2.default;
 	exports.HomeContainer = _HomeContainer2.default;
 	exports.OpeningContainer = _OpeningContainer2.default;
@@ -29071,7 +29076,8 @@
 	        'div',
 	        null,
 	        location.hash === '#/' ? null : _react2.default.createElement(_.HeaderContainer, null),
-	        this.props.children
+	        this.props.children,
+	        location.hash === '#/' ? null : _react2.default.createElement(_.FooterContainer, null)
 	      );
 	    }
 	  }]);
@@ -29117,9 +29123,92 @@
 
 	var _redux = __webpack_require__(43);
 
-	var _components = __webpack_require__(281);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var _AnimationHelpers = __webpack_require__(283);
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FooterContainer = function (_React$Component) {
+	  _inherits(FooterContainer, _React$Component);
+
+	  function FooterContainer() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, FooterContainer);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FooterContainer.__proto__ || Object.getPrototypeOf(FooterContainer)).call.apply(_ref, [this].concat(args))), _this), _this.state = {}, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(FooterContainer, [{
+	    key: 'render',
+	    value: function render() {
+	      var props = {};
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        'Hello from FooterContainer'
+	      );
+	    }
+	  }]);
+
+	  return FooterContainer;
+	}(_react2.default.Component);
+
+	FooterContainer.displayName = 'FooterContainer';
+	FooterContainer.propTypes = {};
+
+
+	function mapStateToProps(state) {
+	  var example = state.example;
+
+	  return {
+	    // example: example.examples,
+	  };
+	}
+
+	function mapDispatchToProps(dispatch) {
+	  return {
+	    // example: bindActionCreators(ExampleActions.exampleFunction, dispatch),
+	  };
+	}
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(FooterContainer);
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(1);
+
+	var _redux = __webpack_require__(43);
+
+	var _reactRouter = __webpack_require__(70);
+
+	var _components = __webpack_require__(282);
+
+	var _AnimationHelpers = __webpack_require__(284);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29143,7 +29232,9 @@
 	      args[_key] = arguments[_key];
 	    }
 
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HeaderContainer.__proto__ || Object.getPrototypeOf(HeaderContainer)).call.apply(_ref, [this].concat(args))), _this), _this.state = {}, _temp), _possibleConstructorReturn(_this, _ret);
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HeaderContainer.__proto__ || Object.getPrototypeOf(HeaderContainer)).call.apply(_ref, [this].concat(args))), _this), _this.state = {}, _this.handleRedirect = function (path) {
+	      return _reactRouter.hashHistory.push(path);
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  _createClass(HeaderContainer, [{
@@ -29154,7 +29245,9 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var props = {};
+	      var props = {
+	        handleRedirect: this.handleRedirect
+	      };
 
 	      return _react2.default.createElement(_components.Header, props);
 	    }
@@ -29170,9 +29263,7 @@
 	function mapStateToProps(state) {
 	  var example = state.example;
 
-	  return {
-	    // example: example.examples,
-	  };
+	  return {};
 	}
 
 	function mapDispatchToProps(dispatch) {
@@ -29180,25 +29271,6 @@
 	}
 
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HeaderContainer);
-
-/***/ },
-/* 281 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.Header = undefined;
-
-	var _Header = __webpack_require__(282);
-
-	var _Header2 = _interopRequireDefault(_Header);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.Header = _Header2.default;
 
 /***/ },
 /* 282 */
@@ -29209,8 +29281,25 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.Header = undefined;
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _Header = __webpack_require__(283);
+
+	var _Header2 = _interopRequireDefault(_Header);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.Header = _Header2.default;
+
+/***/ },
+/* 283 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _react = __webpack_require__(4);
 
@@ -29218,77 +29307,61 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var Header = function Header(props) {
+	  var handleRedirect = props.handleRedirect;
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "app-header" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "app-header-logo" },
+	      "The Artisanals"
+	    ),
+	    _react2.default.createElement(
+	      "div",
+	      { className: "app-header-nav" },
+	      _react2.default.createElement(
+	        "span",
+	        { onClick: function onClick() {
+	            return handleRedirect('home');
+	          } },
+	        "Home"
+	      ),
+	      _react2.default.createElement(
+	        "span",
+	        { onClick: function onClick() {
+	            return handleRedirect('music');
+	          } },
+	        "Music"
+	      ),
+	      _react2.default.createElement(
+	        "span",
+	        { onClick: function onClick() {
+	            return handleRedirect('tour');
+	          } },
+	        "Tour"
+	      ),
+	      _react2.default.createElement(
+	        "span",
+	        { onClick: function onClick() {
+	            return handleRedirect('about');
+	          } },
+	        "About"
+	      )
+	    )
+	  );
+	};
 
-	var Header = function (_Component) {
-	  _inherits(Header, _Component);
+	Header.propTypes = {
+	  handleRedirect: _react2.default.PropTypes.func
+	};
 
-	  function Header() {
-	    var _ref;
-
-	    var _temp, _this, _ret;
-
-	    _classCallCheck(this, Header);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Header.__proto__ || Object.getPrototypeOf(Header)).call.apply(_ref, [this].concat(args))), _this), _this.state = {}, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-
-	  _createClass(Header, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'app-header' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'app-header-logo' },
-	          'The Artisnals'
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'app-header-nav' },
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            'Home'
-	          ),
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            'Music'
-	          ),
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            'Tour'
-	          ),
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            'About'
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Header;
-	}(_react.Component);
-
-	Header.displayName = 'Header';
-	Header.propTypes = {};
 	exports.default = Header;
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29299,7 +29372,7 @@
 	exports.logoAnimation = logoAnimation;
 	exports.headerAnimation = headerAnimation;
 
-	var _gsap = __webpack_require__(284);
+	var _gsap = __webpack_require__(285);
 
 	var _reactRouter = __webpack_require__(70);
 
@@ -29310,20 +29383,19 @@
 	    ease: Bounce.easeOut
 	  });
 
-	  setTimeout(function () {
-	    _reactRouter.hashHistory.push('home');
-	  }, 3000);
+	  // setTimeout(() => {
+	  //   hashHistory.push('home');
+	  // }, 3000);
 	}
 
 	function headerAnimation() {
-	  _gsap.TweenMax.from('.app-header-nav, .app-header-logo, .app-content-img', .5, {
-	    opacity: .5,
-	    scale: 0
+	  _gsap.TweenMax.from('.app-header-logo, .app-content-img', .5, {
+	    marginLeft: '100vw'
 	  });
 	}
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -35315,7 +35387,7 @@
 							if (global) {
 								_globals[n] = _exports[n] = cl; //provides a way to avoid global namespace pollution. By default, the main classes like TweenLite, Power1, Strong, etc. are added to window unless a GreenSockGlobals is defined. So if you want to have things added to a custom object instead, just do something like window.GreenSockGlobals = {} before loading any GreenSock files. You can even set up an alias like window.GreenSockGlobals = windows.gs = {} so that you can access everything like gs.TweenLite. Also remember that ALL classes are added to the window.com.greensock object (in their respective packages, like com.greensock.easing.Power1, com.greensock.TweenLite, etc.)
 								hasModule = (typeof(module) !== "undefined" && module.exports);
-								if (!hasModule && "function" === "function" && __webpack_require__(285)){ //AMD
+								if (!hasModule && "function" === "function" && __webpack_require__(286)){ //AMD
 									!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() { return cl; }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 								} else if (hasModule){ //node
 									if (ns === moduleName) {
@@ -37129,7 +37201,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
@@ -37137,7 +37209,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ },
-/* 286 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37233,7 +37305,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeContainer);
 
 /***/ },
-/* 287 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37254,7 +37326,7 @@
 
 	var _reactRouter = __webpack_require__(70);
 
-	var _AnimationHelpers = __webpack_require__(283);
+	var _AnimationHelpers = __webpack_require__(284);
 
 	var AnimationHelpers = _interopRequireWildcard(_AnimationHelpers);
 
@@ -37302,11 +37374,11 @@
 	        { className: 'app-opening' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'app-opening-logo' },
+	          { onClick: this.handleRedirect, className: 'app-opening-logo' },
 	          _react2.default.createElement(
 	            'span',
-	            { onClick: this.handleRedirect },
-	            'The Artisnals'
+	            null,
+	            'The Artisanals'
 	          )
 	        )
 	      );

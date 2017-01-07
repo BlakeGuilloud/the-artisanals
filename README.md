@@ -1,1 +1,1 @@
-# the-artisnals
+# the-artisanals
