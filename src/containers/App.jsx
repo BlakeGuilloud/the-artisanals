@@ -13,10 +13,10 @@ class App extends React.Component {
   state = {};
 
   render() {
-    console.log('hello woreld');
+    console.log(location);
     return (
       <div>
-        <HeaderContainer />
+        {location.hash === '#/' ? null : <HeaderContainer />}
 
         {this.props.children}
       </div>

@@ -1,23 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Header } from '../components';
 
-class HeaderContainer extends React.Component {
-  static displayName = 'HeaderContainer';
+
+class HomeContainer extends React.Component {
+  static displayName = 'HomeContainer';
 
   static propTypes = {};
 
   state = {};
 
-  componentDidMount() {
-  }
-
   render() {
     const props = {};
 
     return (
-      <Header {...props} />
+      <div>Hello from HomeContainer</div>
     );
   }
 }
@@ -30,7 +27,9 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    // example: bindActionCreators(ExampleActions.exampleFunction, dispatch),
+  };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

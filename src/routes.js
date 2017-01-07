@@ -1,11 +1,11 @@
-import { App } from './containers';
+import { App, HeaderContainer, HomeContainer, OpeningContainer } from './containers';
 
 const routes = {
   path: '/',
   component: App,
-  // indexRoute: { component: SettingsContainer },
+  indexRoute: { component: OpeningContainer },
   childRoutes: [
-    // { path: '/home', component: HomeContainer },
+    { path: '/home', component: HomeContainer },
   ],
 };
 
