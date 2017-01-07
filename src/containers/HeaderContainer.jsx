@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Header } from '../components';
+import * as BandsActions from '../actions/BandsActions';
 
 class HeaderContainer extends React.Component {
   static displayName = 'HeaderContainer';
@@ -9,6 +10,10 @@ class HeaderContainer extends React.Component {
   static propTypes = {};
 
   state = {};
+
+  componentDidMount() {
+    this.props.fetchTour();
+  }
 
   render() {
     const props = {};
@@ -28,7 +33,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    // example: bindActionCreators(ExampleActions.exampleFunction, dispatch),
+    fetchTour: bindActionCreators(BandsActions.fetchTour, dispatch),
   };
 }
 

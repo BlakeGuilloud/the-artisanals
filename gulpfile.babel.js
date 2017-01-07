@@ -15,7 +15,6 @@ const duration = require('gulp-duration');
 const gulp = require('gulp');
 const open = require('gulp-open');
 const serve = require('gulp-serve');
-const uglify = require('gulp-uglify');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const less = require('gulp-less');
@@ -24,7 +23,7 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config');
 
 gulp.task('serve', ['watch:styles', 'watch:client'], serve({
-  port: 8080,
+  port: 3000,
 }));
 
 gulp.task('watch:styles', ['build:styles'], () => {
