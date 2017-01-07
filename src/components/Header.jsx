@@ -10,12 +10,15 @@ export default class Header extends Component {
   render() {
     return (
       <div className="app-header">
-        <div id="app-header__menu" className="app-header__menu">
-          <div className="app-header__menu__bar" />
-          <div className="app-header__menu__bar" />
-          <div className="app-header__menu__bar" />
+        <div className="app-header-logo">
+          The Artisnals
         </div>
-        The Artisnals
+        <div className="app-header-nav">
+          <span>Home</span>
+          <span>Music</span>
+          <span>Tour</span>
+          <span>About</span>
+        </div>
       </div>
     );
   }

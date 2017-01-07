@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Header } from '../components';
+import { headerAnimation } from '../helpers/AnimationHelpers';
 
 class HeaderContainer extends React.Component {
   static displayName = 'HeaderContainer';
@@ -11,6 +12,7 @@ class HeaderContainer extends React.Component {
   state = {};
 
   componentDidMount() {
+    headerAnimation();
   }
 
   render() {

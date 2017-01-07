@@ -13,7 +13,6 @@ class App extends React.Component {
   state = {};
 
   render() {
-    console.log(location);
     return (
       <div>
         {location.hash === '#/' ? null : <HeaderContainer />}

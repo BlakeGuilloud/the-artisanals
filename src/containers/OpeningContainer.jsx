@@ -13,10 +13,10 @@ class OpeningContainer extends React.Component {
 
   componentDidMount() {
     AnimationHelpers.logoAnimation();
+  }
 
-    setTimeout(() => {
-      hashHistory.push('home');
-    }, 3000);
+  handleRedirect = () => {
+    return hashHistory.push('home');
   }
 
   render() {
@@ -25,7 +25,7 @@ class OpeningContainer extends React.Component {
     return (
       <div className="app-opening">
         <div className="app-opening-logo">
-          <span>The Artisnals</span>
+          <span onClick={this.handleRedirect}>The Artisnals</span>
         </div>
       </div>
     );
