@@ -29155,8 +29155,26 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        null,
-	        'Hello from FooterContainer'
+	        { className: 'app-footer' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'app-footer-social' },
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'facebook.com' },
+	            _react2.default.createElement('i', { className: 'fa fa-facebook-official', 'aria-hidden': 'true' })
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'google.com' },
+	            _react2.default.createElement('i', { className: 'fa fa-instagram', 'aria-hidden': 'true' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'app-footer-logo' },
+	          'The Artisnals'
+	        )
 	      );
 	    }
 	  }]);
@@ -37256,27 +37274,38 @@
 	  _createClass(HomeContainer, [{
 	    key: 'render',
 	    value: function render() {
+	      var data = [{
+	        title: 'New album!',
+	        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+	        image: 'http://fillmurray.com/200/300'
+	      }, {
+	        title: 'New Tour!',
+	        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+	        image: 'http://fillmurray.com/300/300'
+	      }];
 	      var props = {};
 
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'app-content' },
 	        _react2.default.createElement('img', { className: 'app-content-img', src: 'http://fillmurray.com/1000/200', alt: '' }),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	        )
+	        data.map(function (item, idx) {
+	          return _react2.default.createElement(
+	            'div',
+	            { key: idx, className: 'app-home-preview' },
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              item.title
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              item.content
+	            ),
+	            _react2.default.createElement('img', { src: item.image, alt: '' })
+	          );
+	        })
 	      );
 	    }
 	  }]);

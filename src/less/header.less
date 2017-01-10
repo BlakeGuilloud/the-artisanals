@@ -6,10 +6,13 @@
   font-size: 1.6rem;
   font-family: monospace;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   div {
     margin: 1rem;
   }
+}
+.app-header-logo {
+  border-bottom: 1px solid white;
 }
 
 .app-header-nav {
@@ -25,8 +28,10 @@
   }
 }
 
-@media (min-width: 600) {
-  body {
-    background-color: blue;
+@media (max-width: 600px) {
+  .app-header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

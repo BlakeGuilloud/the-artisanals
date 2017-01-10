@@ -14,7 +14,20 @@ class FooterContainer extends React.Component {
     const props = {};
 
     return (
-      <div>Hello from FooterContainer</div>
+      <div className="app-footer">
+        <div className="app-footer-social">
+          <a href="facebook.com">
+            <i className="fa fa-facebook-official" aria-hidden="true"></i>
+          </a>
+          <a href="google.com">
+            <i className="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div className="app-footer-logo">
+          The Artisnals
+        </div>
+
+      </div>
     );
   }
 }
